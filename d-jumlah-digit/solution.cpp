@@ -2,7 +2,7 @@
 
 using namespace std;
 
-const long long M = 998244353;
+const long long M = 1e9 + 7;
 const int N = 22;
 const int K = 10;
 

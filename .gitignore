@@ -30,3 +30,14 @@
 *.exe
 *.out
 *.app
+
+# Testcases
+runner
+solution
+alt-solution
+tc/
+
+# Misc
+.vscode/
+*.aux
+*.log

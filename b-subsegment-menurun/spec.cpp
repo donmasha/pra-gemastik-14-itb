@@ -3,6 +3,8 @@
 using namespace tcframe;
 using namespace std;
 
+mt19937 rng32(chrono::steady_clock::now().time_since_epoch().count());
+
 class ProblemSpec : public BaseProblemSpec {
 protected:
     const int NMAX = 1e5;
@@ -64,11 +66,14 @@ protected:
         for (int i = 0; i < 5; i++) {
             CASE(N = rnd.nextInt(NMAX / 100, NMAX / 10), generateTestCases(N, A, 0, AMAX / 1000));
         }
-        for (int i = 0; i < 15; i++) {
-            CASE(N = rnd.nextInt(1, NMAX), generateTestCases(N, A, 0, AMAX));
+        for (int i = 0; i < 5; i++) {
+            CASE(N = rnd.nextInt(NMAX / 10, NMAX), generateRandomPermutation(N, A));
         }
         for (int i = 0; i < 5; i++) {
-            CASE(N = NMAX, generateTestCases(N, A, 0, AMAX));
+            CASE(N = rnd.nextInt(NMAX), generateRandomPermutation(N, A));
+        }
+        for (int i = 0; i < 5; i++) {
+            CASE(N = NMAX, generateLowest(N, A));
         }
     }
 
@@ -78,5 +83,19 @@ private:
         for (int i = 0; i < N; i++) {
             A[i] = rnd.nextInt(low, high);
         }
+    }
+
+    void generateRandomPermutation(int N, vector<int>& A) {
+        A.resize(N);
+        iota(A.begin(), A.end(), 1);
+        shuffle(A.begin(), A.end(), rng32);
+    }
+
+    void generateLowest(int N, vector<int>& A) {
+        A.resize(N);
+        iota(A.begin(), A.end(), 1);
+        reverse(A.begin(), A.end());
+        int idx = rng32() % N;
+        A[idx] = rng32() % AMAX;
     }
 };

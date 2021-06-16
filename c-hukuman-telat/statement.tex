@@ -1,0 +1,100 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx, eso-pic}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{mathtools}
+
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\pagestyle{fancy}
+\fancyhf{}
+\hypersetup{ colorlinks=true, linkcolor=black, filecolor=magenta, urlcolor=cyan}
+\geometry{ a4paper, total={170mm,257mm}, top=20mm, right=20mm, bottom=20mm, left=20mm}
+\lhead{Pra GEMASTIK 14 ITB | Competitive Programming}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.3em}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\thepage}
+\lfoot{Pra GEMASTIK 14 ITB | Competitive Programming}
+\lstset{
+    basicstyle=\ttfamily\small,
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=2,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=none,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    prebreak={},
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    captionpos=t,
+    escapeinside={(\%}{\%)}
+}
+
+\begin{document}
+
+\begin{center}
+    \section*{Problem C - Hukuman Telat} % ganti judul soal
+    \begin{tabular}{ | c c | }
+        \hline
+        Batas Waktu  & 1s \\    % jangan lupa ganti time limit
+        Batas Memori & 64MB \\  % jangan lupa ganti memory limit
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+
+Pada tim pemrograman ITB. Ada $P$ orang dalam tim tersebut, dinomori 1 sampai $P$, dan setiap kali orang terlambat, ditulis nomor mereka di papan tulis. Melihat papan tulis, ternyata terjadi $N$ kali terlambat yang dicatat secara total. Pelatih Mastre telah memutuskan untuk membuat para orang melakukan push-up sebagai hukuman. Orang ke-$K$ harus menghitung berapa kali total orang nomor $1$ sampai $K$ terlambat, kemudian melakukan push-up sebanyak itu. Donbasta bertanya-tanya apakah Pelatih Mastre terlalu kejam kepada para orangnya, jadi Donbasta bertanya kepadanya, "Berapa banyak orang yang paling banyak melakukan $X$ push-up?". Donbasta sangat pelupa, jadi dia mungkin bertanya kepada Pelatih Mastre hingga $Q$ pernyataan. Dia mungkin mengajukan beberapa pertanyaan dengan $X$ yang sama. Karena $Q$ dan $X$ mungkin besar, bantu Pelatih Mastre menjawab pertanyaan-pertanyaan ini!
+
+\subsection*{Format Masukan}
+
+Baris pertama berisi dua bilangan bulat yang dipisahkan spasi, $P$ dan $N$ $(1 \leq P \leq 10^9,  1 \leq N \leq 10^5)$.
+
+Baris kedua berisi $N$ bilangan bulat yang dipisahkan oleh spasi: angka-angka di papan tulis.
+
+Baris ketiga berisi bilangan bulat $Q$, $(1 \leq Q \leq 10^5)$ jumlah pertanyaan yang akan diajukan Donbasta.
+
+$Q$ baris berikutnya mewakili pertanyaan. Setiap pertanyaan berisi bilangan bulat $X$  $(0 \leq X \leq 10^9)$.
+
+\subsection*{Format Keluaran}
+
+Untuk setiap pertanyaan, keluarkan jawaban dari pertanyaan tersebut.
+
+\begin{multicols}{2}
+\subsection*{Contoh Masukan}
+\begin{lstlisting}
+4 6
+4 2 1 2 1 2
+5
+0
+1
+2
+3
+4
+\end{lstlisting}
+\columnbreak
+\subsection*{Contoh Keluaran}
+\begin{lstlisting}
+0
+0
+1
+1
+1
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+\pagebreak
+
+\end{document}

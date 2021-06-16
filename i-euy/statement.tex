@@ -1,0 +1,101 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx, eso-pic}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{mathtools}
+
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\pagestyle{fancy}
+\fancyhf{}
+\hypersetup{ colorlinks=true, linkcolor=black, filecolor=magenta, urlcolor=cyan}
+\geometry{ a4paper, total={170mm,257mm}, top=20mm, right=20mm, bottom=20mm, left=20mm}
+\lhead{Pra GEMASTIK 14 ITB | Competitive Programming}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.3em}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\thepage}
+\lfoot{Pra GEMASTIK 14 ITB | Competitive Programming}
+\lstset{
+    basicstyle=\ttfamily\small,
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=2,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=none,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    prebreak={},
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    captionpos=t,
+    escapeinside={(\%}{\%)}
+}
+
+\begin{document}
+
+\begin{center}
+    \section*{Problem I - Euy} % ganti judul soal
+
+    \begin{tabular}{ | c c | }
+        \hline
+        Batas Waktu  & 1s \\    % jangan lupa ganti time limit
+        Batas Memori & 128MB \\  % jangan lupa ganti memory limit
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+
+Suatu bilangan bulat $N$ dikatakan \textbf{Euy} apabila mengandung angka $0$, $1$, dan $2$. Tentukan apakah suatu bilangan $N$ merupakan bilangan \textbf{Euy} atau tidak!
+
+\subsection*{Format Masukan}
+
+Baris pertama terdiri dari satu bilangan bulat positif $T$ ($1 \leq T \leq 10^5$), menyatakan banyaknya kasus uji.
+Tiap kasus uji berisi bilangan bulat $N$ ($1 \leq N \leq 10^{18}$).
+
+\subsection*{Format Keluaran}
+
+Jika bilangan merupakan bilangan \textbf{Euy} keluarkan \lstinline{"EUY"} (tanpa petik), jika tidak maka keluarkan \lstinline{"EDAN"} (tanpa petik)
+
+\begin{multicols}{2}
+\subsection*{Contoh Masukan}
+\begin{lstlisting}
+7
+13
+5
+1250
+10235
+30
+13518012
+16518012
+\end{lstlisting}
+\columnbreak
+\subsection*{Contoh Keluaran}
+\begin{lstlisting}
+EDAN
+EDAN
+EUY
+EUY
+EDAN
+EUY
+EUY
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+% \subsection*{Penjelasan}
+% Jika dibutuhkan, tambahkan penjelasan di sini
+
+\pagebreak
+
+\end{document}

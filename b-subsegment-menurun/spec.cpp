@@ -70,7 +70,6 @@ protected:
         for (int i = 0; i < 5; i++) {
             CASE(N = NMAX, generateTestCases(N, A, 0, AMAX));
         }
-        CASE(N = NMAX, generateTestCases(N, A, 0, -AMAX));
     }
 
 private:

@@ -1,0 +1,89 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx, eso-pic}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{mathtools}
+
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\pagestyle{fancy}
+\fancyhf{}
+\hypersetup{ colorlinks=true, linkcolor=black, filecolor=magenta, urlcolor=cyan}
+\geometry{ a4paper, total={170mm,257mm}, top=20mm, right=20mm, bottom=20mm, left=20mm}
+\lhead{Pra GEMASTIK 14 ITB | Competitive Programming}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.3em}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\thepage}
+\lfoot{Pra GEMASTIK 14 ITB | Competitive Programming}
+\lstset{
+    basicstyle=\ttfamily\small,
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=2,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=none,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    prebreak={},
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    captionpos=t,
+    escapeinside={(\%}{\%)}
+}
+
+\begin{document}
+
+\begin{center}
+    \section*{Problem G - Bermatematika} % ganti judul soal
+
+    \begin{tabular}{ | c c | }
+        \hline
+        Batas Waktu  & 1s \\    % jangan lupa ganti time limit
+        Batas Memori & 256MB \\  % jangan lupa ganti memory limit
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+
+Anda sedang menonton siaran dari channel Bermatematika.com di YouTube. Pada siaran tersebut diberikan sebuah \textit{challenge} berhadiah. Diberikan dua buah bilangan bulat $X$ dan $Y$, penonton diminta untuk mencari sebuah bilangan bulat non-negatif $K$ sehingga KPK (Kelipatan Persekutuan Terkecil) dari $X+K$ dan $Y+K$ bernilai sekecil mungkin. Apabila ada beberapa nilai $K$ yang memenuhi, nilai terkecil lah yang menjadi jawabannya. "Ini mah berinformatika," gerutu anda dalam hati. Karena ingin hadiah, anda segera membuka editor kesayangan anda, dan mulai melakukan \textit{coding}.
+
+\subsection*{Format Masukan}
+
+Sebuah baris yang terdiri atas dua bilangan bulat positif $X$ dan $Y$ ($1 \leq X, Y \leq 10^9$).
+
+\subsection*{Format Keluaran}
+
+Sebuah baris yang menyatakan jawaban dari \textit{challenge} yang diberikan oleh channel Bermatematika.com. Jawaban dijamin muat dalam Integer 64 bit.
+\\
+
+\begin{multicols}{2}
+\subsection*{Contoh Masukan}
+\begin{lstlisting}
+6 10
+\end{lstlisting}
+\columnbreak
+\subsection*{Contoh Keluaran}
+\begin{lstlisting}
+2
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+\subsection*{Penjelasan}
+% Jika dibutuhkan, tambahkan penjelasan di sini
+Nilai $KPK(6 + 2, 10 + 2)$ adalah $24$. Dapat ditunjukkan bahwa $24$ merupakan yang terkecil dari seluruh nilai $KPK(6 + K, 10 + K)$ untuk setiap bilangan bulat non-negatif $K$, dan $K$ terkecil yang memenuhi adalah $2$.
+
+\pagebreak
+
+\end{document}

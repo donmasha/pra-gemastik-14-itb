@@ -53,10 +53,10 @@ int main () {
             }
         }
     }
-    for (auto x : ans){
-        cout << x << " ";
+    for (int i=0;i<n;i++){
+        if (i < n - 1) cout << ans[i] << ' ';
+        else cout << ans[i] << '\n';
     }
-    cout << el;
 
     return 0;
 }

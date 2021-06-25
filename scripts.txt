@@ -1,0 +1,2 @@
+bash generate-problem.sh TK trialtambah-kurang "Tambah Kurang" 1 256 trial
+bash generate-problem.sh MB trial-mencari-buku "Mencari Buku" 1 256 trial

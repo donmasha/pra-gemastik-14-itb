@@ -43,7 +43,7 @@
 \begin{document}
 
 \begin{center}
-    \section*{Problem E - EZ, lah!} % ganti judul soal
+    \section*{Problem I - Berpetualang} % ganti judul soal
 
     \begin{tabular}{ | c c | }
         \hline
@@ -55,59 +55,55 @@
 
 \subsection*{Deskripsi}
 
-Anda dan teman anda terperangkap dalam sebuah ruangan. Untuk dapat terbebas dari ruangan tersebut, kalian perlu memecahkan sebuah soal yang tertulis di dalam ruangan tersebut sebagai berikut.
+Master prime sedang berpetualang di suatu tempat. Pada tempat tersebut ada $N$ pulau yang dinomori dari 1 sampai $N$, pulau tersebut terhubung dengan $M$ jembatan dua-arah.
 
-Terdapat sebuah array $A$ yang memiliki $N$ buah elemen. Anda diminta untuk mencari jarak terdekat dari dua buah elemen pada $A$ yang nilainya terkecil. 
+Dipastikan bahwa selalu bisa pergi dari suatu pulau ke pulau yang lain. 
 
-Dijamin terdapat setidaknya dua buah elemen pada $A$ yang nilainya merupakan nilai minimum dari elemen-elemen di $A$.
+Master prime suka berpetualang, jika dia berpetualang ke suatu tempat, maka akan dicatat ke bukunya, dan jika sudah ada pulaunya di bukunya maka tidak akan dicatat ulang.
 
-Teman anda berseru, \textbf{"EZ, lah!"}
+Master prime sedang ada di pulau nomor 1 dan ingin berpetualang ke semua pulau, carilah cara agar master prime mendapatkan \textbf{urutan pulau yang} \href{https://en.wikipedia.org/wiki/Lexicographic_order}{lexicographically} \textbf{minimum} tercatat di bukunya!
 
 \subsection*{Format Masukan}
 
-Baris pertama terdiri dari satu bilangan bulat positif $N$ ($2 \leq N \leq 10^5$), menyatakan ukuran dari array $A$.
+Baris pertama berisi dua buah bilanga bulat $N, M$ $(1 \leq N, M \leq 10^5)$, menyatakan banyak pulau dan banyak jembatan yang ada.
 
-Baris kedua terdiri atas $N$ buah bilangan $A_1, A_2, \dots, A_N$ yang merupakan elemen-elemen pada array $A$, dipisahkan oleh spasi ($1 \leq A_i \leq 10^9$)
+$M$ baris berikutnya berisi dua bilangan bulat $U_i, V_i$ menyatakan bahwa pulau $U_i$ dan pulau $V_i$ terhubung dengan jembatan dua-arah. $(1 \leq U_i, V_i \leq N)$
 
-Dijamin setidaknya ada dua elemen pada $A$ yang bernilai $\min(A_1, A_2, \dots, A_N)$.
+\textbf{Catatan:}
+
+Bisa saja ada lebih dari satu jembatan antar kota, dan bisa saja ada jembatan yang menghubungi ke kota itu sendiri.
 
 \subsection*{Format Keluaran}
 
-Sebuah bilangan yang merupakan jawaban dari persoalan di atas
+Keluarkan $N$ bilangan bulat $P_1, \dots, P_N$ berupa jawaban dari persoalan ini!
 \\
 
 \begin{multicols}{2}
-\subsection*{Contoh Masukan 1}
+\subsection*{Contoh Masukan}
 \begin{lstlisting}
-3
-2 1 1
+5 5
+1 4
+3 4
+5 4
+3 2
+1 5
 \end{lstlisting}
 \columnbreak
-\subsection*{Contoh Keluaran 1}
+\subsection*{Contoh Keluaran}
 \begin{lstlisting}
-1
+1 4 3 2 5 
 \end{lstlisting}
 \vfill
 \null
 \end{multicols}
 
-\begin{multicols}{2}
-\subsection*{Contoh Masukan 2}
-\begin{lstlisting}
-15
-3 2 1 3 5 4 5 5 4 1 3 3 2 3 1
-\end{lstlisting}
-\columnbreak
-\subsection*{Contoh Keluaran 2}
-\begin{lstlisting}
-5
-\end{lstlisting}
-\vfill
-\null
-\end{multicols}
+\subsection*{Penjelasan}
 
-% \subsection*{Penjelasan}
-% Jika dibutuhkan, tambahkan penjelasan di sini
+Master prima dapat pergi dengan berpetualang sebagai berikut:
+
+$$1 \rightarrow 4 \rightarrow 3 \rightarrow 2 \rightarrow 3 \rightarrow 4 \rightarrow 1 \rightarrow 5$$
+
+Sehingga didapat urutan 1, 4, 3, 2, 5.
 
 \pagebreak
 

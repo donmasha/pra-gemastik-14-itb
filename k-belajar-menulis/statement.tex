@@ -43,44 +43,44 @@
 \begin{document}
 
 \begin{center}
-    \section*{Problem E - EZ, lah!} % ganti judul soal
+    \section*{Problem K - Belajar Menulis} % ganti judul soal
 
     \begin{tabular}{ | c c | }
         \hline
-        Batas Waktu  & 2s \\    % jangan lupa ganti time limit
-        Batas Memori & 256MB \\  % jangan lupa ganti memory limit
+        Batas Waktu  & 1s \\    % jangan lupa ganti time limit
+        Batas Memori & 64MB \\  % jangan lupa ganti memory limit
         \hline
     \end{tabular}
 \end{center}
 
 \subsection*{Deskripsi}
 
-Anda dan teman anda terperangkap dalam sebuah ruangan. Untuk dapat terbebas dari ruangan tersebut, kalian perlu memecahkan sebuah soal yang tertulis di dalam ruangan tersebut sebagai berikut.
+Riko sedang mengajar menulis bahasa Planet $X$ kepada murid-muridnya. Kata dalam bahasa Planet $X$ terdiri dari karakter 'A', 'B', dan 'C'.
 
-Terdapat sebuah array $A$ yang memiliki $N$ buah elemen. Anda diminta untuk mencari jarak terdekat dari dua buah elemen pada $A$ yang nilainya terkecil. 
+Dalam penulisan kata bahasa Planet $X$ terdapat aturan bahwa tidak boleh terdapat 2 huruf bersebelahan yang sama.
 
-Dijamin terdapat setidaknya dua buah elemen pada $A$ yang nilainya merupakan nilai minimum dari elemen-elemen di $A$.
+Pada kesempatan kali ini dia meminta tolong kamu membuatkan program untuk menilai pekerjaan dari murid-muridnya yang sedang belajar menulis kata dari bahasa Planet $X$.
 
-Teman anda berseru, \textbf{"EZ, lah!"}
+Program akan menerima sebuah bilangan bulat $N$, yang menyatakan panjang dari kata yang akan dinilai, dan sebuah string $S$ berupa kata yang akan dinilai.
+
+Program Anda harus mengeluarkan berapa banyak minimal karakter pada $S$ yang perlu diubah agar kata menjadi sesuai dengan aturan penulisan bahasa Planet $X$.
 
 \subsection*{Format Masukan}
 
-Baris pertama terdiri dari satu bilangan bulat positif $N$ ($2 \leq N \leq 10^5$), menyatakan ukuran dari array $A$.
-
-Baris kedua terdiri atas $N$ buah bilangan $A_1, A_2, \dots, A_N$ yang merupakan elemen-elemen pada array $A$, dipisahkan oleh spasi ($1 \leq A_i \leq 10^9$)
-
-Dijamin setidaknya ada dua elemen pada $A$ yang bernilai $\min(A_1, A_2, \dots, A_N)$.
+Baris pertama terdiri dari satu bilangan bulat positif $N$ ($1 \leq N \leq 10^5$), menyatakan panjang kata.
+Baris kedua terdiri dari sebuah string $S$
+($1 \leq |S| \leq N$) ($S_i \in \{'A', 'B', 'C'\}$), menyatakan kata yang akan dinilai. 
 
 \subsection*{Format Keluaran}
 
-Sebuah bilangan yang merupakan jawaban dari persoalan di atas
+Keluarkan sebuah bilangan bulat yang menyatakan jawaban dari soal 
 \\
 
 \begin{multicols}{2}
 \subsection*{Contoh Masukan 1}
 \begin{lstlisting}
-3
-2 1 1
+5
+GBBRG
 \end{lstlisting}
 \columnbreak
 \subsection*{Contoh Keluaran 1}
@@ -94,13 +94,13 @@ Sebuah bilangan yang merupakan jawaban dari persoalan di atas
 \begin{multicols}{2}
 \subsection*{Contoh Masukan 2}
 \begin{lstlisting}
-15
-3 2 1 3 5 4 5 5 4 1 3 3 2 3 1
+8
+BBBGBRRR
 \end{lstlisting}
 \columnbreak
 \subsection*{Contoh Keluaran 2}
 \begin{lstlisting}
-5
+2
 \end{lstlisting}
 \vfill
 \null

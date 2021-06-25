@@ -96,16 +96,16 @@ protected:
             CASE(N = 1, make_random_query(N, C, A)); 
         }
         for (int i = 0; i < 3; i++) {
-            CASE(N = rnd.nextInt(1, NMAX), make_random_query(N, C, A, rnd.nextInt(1, 5))); 
+            CASE(N = rnd.nextInt(1, NMAX), make_random_query(N, C, A, (rnd.nextInt(0, 1) > 0) ? 0 : rnd.nextInt(1, 5))); 
         }
         for (int i = 0; i < 5; i++) {
-            CASE(N = NMAX, make_random_query(N, C, A, rnd.nextInt(1, 5), 1e9, 1e9)); 
+            CASE(N = NMAX, make_random_query(N, C, A, (rnd.nextInt(0, 1) > 0) ? 0 : rnd.nextInt(1, 5), 1e9, 1e9)); 
         }
         for (int i = 0; i < 10; i++) {
-            CASE(N = NMAX, make_random_query(N, C, A, rnd.nextInt(1, 5), 1e9)); 
+            CASE(N = NMAX, make_random_query(N, C, A, (rnd.nextInt(0, 1) > 0) ? 0 : rnd.nextInt(1, 5), 1e9)); 
         }
         for (int i = 0; i < 10; i++) {
-            CASE(N = NMAX, make_random_query(N, C, A, rnd.nextInt(1, 5), 1e9, 1e8)); 
+            CASE(N = NMAX, make_random_query(N, C, A, (rnd.nextInt(0, 1) > 0) ? 0 : rnd.nextInt(1, 5), 1e9, 1e8)); 
         }
     }
 

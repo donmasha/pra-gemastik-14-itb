@@ -33,7 +33,7 @@ protected:
 
 private:
     bool check_string(int sz, const string& s){
-        if (s.size() == sz) return 0;
+        if (s.size() != sz) return 0;
         for (const char& c : s){
             if (c != 'A' && c != 'B' && c != 'C') return 0;
         }

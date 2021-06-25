@@ -1,2 +1,10 @@
+# TRIAL
 bash generate-problem.sh TK trialtambah-kurang "Tambah Kurang" 1 256 trial
 bash generate-problem.sh MB trial-mencari-buku "Mencari Buku" 1 256 trial
+
+# FINAL
+bash generate-problem.sh A-TP a-tiga-perkalian "Tiga Perkalian" 1 64 final
+bash generate-problem.sh B-SM b-subsegment-menurun "Subgsegment Menurun" 1 128 final
+bash generate-problem.sh C-HT c-hukuman-telat "Hukuman Telat" 2 128 final
+bash generate-problem.sh D-JD d-jumlah-digit "Jumlah Digit" 2 512 final
+bash generate-problem.sh I-EUY i-euy "Euy" 1 128 final

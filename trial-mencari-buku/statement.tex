@@ -2,19 +2,25 @@
 
 \usepackage{geometry}
 \usepackage{amsmath}
-\usepackage{graphicx}
+\usepackage{graphicx, eso-pic}
 \usepackage{listings}
 \usepackage{hyperref}
 \usepackage{multicol}
 \usepackage{fancyhdr}
+\usepackage{mathtools}
+
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
 \pagestyle{fancy}
+\fancyhf{}
 \hypersetup{ colorlinks=true, linkcolor=black, filecolor=magenta, urlcolor=cyan}
 \geometry{ a4paper, total={170mm,257mm}, top=20mm, right=20mm, bottom=20mm, left=20mm}
+\lhead{Trial | Pra GEMASTIK 14 ITB | Competitive Programming}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{1em}
+\setlength{\parskip}{0.3em}
 \renewcommand{\headrulewidth}{0pt}
-\lhead{ITB - IEEEXtreme 14.0 Selection}
-\fancyfoot[CE,CO]{\thepage}
+\rfoot{\thepage}
+\lfoot{Trial | Pra GEMASTIK 14 ITB | Competitive Programming}
 \lstset{
     basicstyle=\ttfamily\small,
     columns=fixed,
@@ -37,60 +43,54 @@
 \begin{document}
 
 \begin{center}
-    \section*{I. Menghitung Buku}
+    \section*{Tambah Kurang} % ganti judul soal
 
     \begin{tabular}{ | c c | }
         \hline
         Batas Waktu  & 1s \\    % jangan lupa ganti time limit
-        Batas Memori & 256MB \\  % jangan lupa ganti memory limit
+        Batas Memori & 128MB \\  % jangan lupa ganti memory limit
         \hline
     \end{tabular}
 \end{center}
 
 \subsection*{Deskripsi}
 
-Hasan adalah seorang mahasiswa ITB yang sangat rajin. Dia memiliki buku yang bernomor $1, 2, 3, \dots$ sampai tak terhingga. Kamal, temannya Hasan, mengambil semua buku - buku yang memiliki nomor berkelipatan $N$. Sekarang Hasan penasaran, ia ingin menghitung apa nomor yang ada di buku pada urutan ke $K$.
-
-Misalnya, jika $N$ bernilai $4$ dan $K$ bernilai $7$, maka barisannya adalah $1, 2, 3, 5, 6, 7, 9, 10, 11, \dots$ dan buku yang berada pada urutan ke $7$ adalah buku bernomor $9$.
+Diberikan bilangan bulat $N$ dan $K$, dalam satu operasi Anda dapat mengubah $N$ menjadi $N - 1$ atau $N + 1$, tentukan banyaknya operasi minimum yang diperlukan agar $N$ habis dibagi $K$.
 
 \subsection*{Format Masukan}
 
-Baris pertama terdiri dari satu bilangan bulat positif $T$ ($1 \leq T \leq 1000$), menyatakan banyaknya kasus uji.
-
-$T$ Baris berikutnya berisi $2$ buah bilangan $N$ ($2 \leq N \leq 10^9$) dan $K$ ($2 \leq K \leq 10^9$).
+Baris pertama terdiri dari satu bilangan bulat positif $T$ ($1 \leq T \leq 10^5$), menyatakan banyaknya kasus uji.
+Tiap kasus uji berisi dua bilangan bulat $N$, $K$ ($1 \leq N, K \leq 10^{18}$).
 
 \subsection*{Format Keluaran}
 
-Keluarkan $T$ buah baris yang berisi jawaban untuk setiap kasus uji.
-\\
+Untuk tiap kasus uji, keluarkan jawaban dari persoalan ini.
 
 \begin{multicols}{2}
 \subsection*{Contoh Masukan}
 \begin{lstlisting}
 5
-7 4
-4 7
-2 100
-5 12
-500000000 1000000000
+7 5
+8 4
+2 3
+5 3
+13518012 16518012
 \end{lstlisting}
 \columnbreak
 \subsection*{Contoh Keluaran}
 \begin{lstlisting}
-4
-9
-199
-14
-1000000002
+2
+0
+1
+1
+3000000
 \end{lstlisting}
 \vfill
 \null
 \end{multicols}
 
-\subsection*{Penjelasan}
-Untuk kasus pertama, barisannya adalah $1, 2, 3, 4, 5, 6, 8, 9, \dots$. Dapat dilihat bahwa buku ke-$4$ adalah buku bernomor $4$.
-
-Kasus kedua telah dijelaskan di deskripsi soal.
+% \subsection*{Penjelasan}
+% Jika dibutuhkan, tambahkan penjelasan di sini
 
 \pagebreak
 

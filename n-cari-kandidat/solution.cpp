@@ -11,42 +11,50 @@ using namespace std;
 using ll = long long;
 using pii = pair<int, int>;
 
-const int N = 5e5 + 10;
-const int INF = 1e9 + 10;
+const int N = 5e4 + 10;
 
 int n, q;
 int ar[N];
-vector<int> pos[N];
-vector<pair<int, pii>> vec;
-vector<vector<pair<int, pii>>> t;
+int ans[N];
+vector<pair<pii, int>> quers;
+vector<pii> asked;
+int bsz;
 
-void build(int v, int tl, int tr){
-    if (tl == tr){
-        t[v].pb(vec[tl]);
-        return;
-    }
-    int tm = (tl + tr) / 2;
-    build(v * 2, tl, tm);
-    build(v * 2 + 1, tm + 1, tr);
-    t[v].resize(tr - tl + 1);
-    merge(t[v * 2].begin(), t[v * 2].end(), t[v * 2 + 1].begin(), t[v * 2 + 1].end(), t[v].begin());
-    pii mx = {-1, -1};
-    for (auto& x : t[v]){
-        mx = max(mx, x.se);
-        x.se = mx;
+int cnt[N];
+int bit[N];
+
+bool comp(const pair<pii, int>& a, const pair<pii, int>& b){
+    pii tempa = mp((a.fi.fi - 1) / bsz, a.fi.se);
+    pii tempb = mp((b.fi.fi - 1) / bsz, b.fi.se);
+    if (tempa.fi & 1) tempa.se = -tempa.se;
+    if (tempb.fi & 1) tempb.se = -tempb.se;
+    return tempa < tempb;
+}
+void upd(int x, int val){
+    if (x == 0) return;
+    while (x < N){
+        bit[x] += val;
+        x += (x & (-x));
     }
 }
-pii ask(int v, int tl, int tr, int l, int r, int left){
-    if (l > r || tr < l || r < tl) return mp(-1, -1);
-    if (l <= tl && tr <= r){
-        pair<int, pii> cari = mp(left, mp(INF, INF));
-        auto it = upper_bound(t[v].begin(), t[v].end(), cari);
-        if (it == t[v].begin()) return mp(-1, -1);
-        it--;
-        return it->se;
+int ask(int x){
+    int ret = 0;
+    while (x){
+        ret += bit[x];
+        x -= (x & (-x));
     }
-    int tm = (tl + tr) / 2;
-    return max(ask(v * 2, tl, tm, l, r, left), ask(v * 2 + 1, tm + 1, tr, l, r, left));
+    return ret;
+}
+int ask(int l, int r){
+    return ask(r) - ask(l - 1);
+}
+void add(int pos){
+    upd(cnt[ar[pos]], -1);
+    upd(++cnt[ar[pos]], 1);
+}
+void del(int pos){
+    upd(cnt[ar[pos]], -1);
+    upd(--cnt[ar[pos]], 1);
 }
 
 int main () {
@@ -55,31 +63,36 @@ int main () {
     cout.tie(0);
 
     cin >> n;
+    bsz = sqrt(n) + 1;
     for (int i=1;i<=n;i++){
         cin >> ar[i];
-        if (pos[ar[i]].empty()) pos[ar[i]].pb(0);
-        pos[ar[i]].pb(i);
     }
-    vec.resize(n + 1);
-    t.resize(n * 4 + 1);
-    for (int i=1;i<N;i++){
-        if (pos[i].size()) pos[i].pb(n + 1);
-        int len = pos[i].size();
-        for (int j=1;j<len - 1;j++){
-            int l = pos[i][j - 1] + 1;
-            int cur = pos[i][j];
-            int r = pos[i][j + 1] - 1;
-            vec[cur] = mp(l, mp(r, i));
-        }
-    }
-    build(1, 1, n);
     cin >> q;
-    while (q--){
+    for (int i=0;i<q;i++){
         int l, r;
         cin >> l >> r;
-        auto temp = ask(1, 1, n, l, r, l);
-        if (r <= temp.fi) cout << temp.se << el;
-        else cout << -1 << el;
+        quers.pb(mp(mp(l, r), i));
+        cin >> l >> r;
+        asked.pb(mp(l, r));
+    }
+    sort(quers.begin(), quers.end(), &comp);
+    int l = 1, r = 0;
+    for (auto& x : quers){
+        int ll = x.fi.fi;
+        int rr = x.fi.se;
+        int id = x.se;
+        int a = asked[id].fi;
+        int b = asked[id].se;
+        
+        while (ll < l) add(--l);
+        while (r < rr) add(++r);
+        while (l < ll) del(l++);
+        while (rr < r) del(r--);
+
+        ans[id] = ask(a, b);
+    }
+    for (int i=0;i<q;i++){
+        cout << ans[i] << el;
     }
 
     return 0;

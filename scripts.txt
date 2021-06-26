@@ -7,4 +7,9 @@ bash generate-problem.sh A-TP a-tiga-perkalian "Tiga Perkalian" 1 64 final
 bash generate-problem.sh B-SM b-subsegment-menurun "Subgsegment Menurun" 1 128 final
 bash generate-problem.sh C-HT c-hukuman-telat "Hukuman Telat" 2 128 final
 bash generate-problem.sh D-JD d-jumlah-digit "Jumlah Digit" 2 512 final
+bash generate-problem.sh E-EZ e-ez-lah "Ez Lah!" 1 64 final
 bash generate-problem.sh I-EUY i-euy "Euy" 1 128 final
+bash generate-problem.sh K-BM k-belajar-menulis "Belajar Menulis" 1 64 final
+bash generate-problem.sh L-BP l-petualang "Berpetualang" 2 256 final
+bash generate-problem.sh M-KL m-berburu "Kucing Lieur" 2 256 final
+bash generate-problem.sh N-MF n-cari-kandidat "Mencari Frekuensi" 2 256 final

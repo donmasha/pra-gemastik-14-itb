@@ -10,6 +10,7 @@ bash generate-problem.sh D-JD d-jumlah-digit "Jumlah Digit" 2 512 final
 bash generate-problem.sh E-EZ e-ez-lah "Ez Lah!" 1 64 final
 bash generate-problem.sh F-BF f-bilangan-favorit "Bilangan Favorit" 2 256 final
 bash generate-problem.sh G-BM g-bermatematika "Bermatematika" 1 256 final
+bash generate-problem.sh H-EA h-eksplorasi-array "Eksplorasi Array" 2 256 final
 bash generate-problem.sh I-EUY i-euy "Euy" 1 128 final
 bash generate-problem.sh J-BG j-bermain-game "Bermain Game" 1 128 final
 bash generate-problem.sh K-BM k-belajar-menulis "Belajar Menulis" 1 64 final

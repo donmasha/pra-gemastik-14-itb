@@ -47,7 +47,7 @@
 
     \begin{tabular}{ | c c | }
         \hline
-        Batas Waktu  & 2s \\    % jangan lupa ganti time limit
+        Batas Waktu  & 1s \\    % jangan lupa ganti time limit
         Batas Memori & 128MB \\  % jangan lupa ganti memory limit
         \hline
     \end{tabular}
@@ -55,16 +55,20 @@
 
 \subsection*{Deskripsi}
 
-Anda dan teman anda sedang bermain. Permainannya adalah sebagai berikut. Diberikan sebuah bilangan bulat positif $N > 1$ dan awalnya bilangan $1$ tertulis pada papan tulis. Pada setiap langkah, apabila pada saat itu bilangan pada papan tulis adalah $n$, maka pemain dapat mengganti bilangan tersebut dengan $n+1$ atau $2n$, tetapi bilangan baru tersebut tidak boleh bernilai lebih dari $N$. Pemenangnya adalah pemain yang menuliskan bilangan $N$ pada papan tulis. Langkah dilakukan secara bergantian dimulai dari anda. Sekarang anda bertanya-tanya, apabila diberikan dua buah bilangan $L$ dan $R$ ($1 < L \le R$), ada berapa banyak bilangan di antara $L$ dan $R$ (inklusif) yang dapat menjadi nilai $N$ sehingga anda memiliki strategi untuk dapat memenangkan permainan tersebut dengan pasti. 
+Anda dan teman anda sedang bermain. Permainannya adalah sebagai berikut. Diberikan sebuah bilangan bulat positif $N > 1$ dan awalnya bilangan $1$ tertulis pada papan tulis.
+
+Pada setiap langkah, apabila pada saat itu bilangan pada papan tulis adalah $X$, maka pemain dapat mengganti bilangan tersebut dengan $X + 1$ atau $2X$, tetapi bilangan baru tersebut tidak boleh bernilai lebih dari $N$. Pemenangnya adalah pemain yang menuliskan bilangan $N$ pada papan tulis. Langkah dilakukan secara bergantian dimulai dari anda.
+
+Sekarang Anda bertanya-tanya, apabila diberikan dua buah bilangan $L$ dan $R$ ($1 < L \le R$), ada berapa banyak bilangan di antara $L$ dan $R$ (inklusif) yang dapat menjadi nilai $N$ sehingga anda memiliki strategi untuk dapat memenangkan permainan tersebut dengan pasti. 
 
 \subsection*{Format Masukan}
 
 Baris pertama terdiri dari satu bilangan bulat positif $T$ ($1 \leq T \leq 10^4$), menyatakan banyaknya kasus uji.
-Tiap kasus uji berisi dua bilangan bulat positif $L$ dan $R$ ($1 \leq L \leq R \leq 10^{18}$).
+Tiap kasus uji berisi dua bilangan bulat positif $L$ dan $R$ ($1 < L \leq R \leq 10^{18}$).
 
 \subsection*{Format Keluaran}
 
-$T$ buah baris, baris ke-$i$ berisi jawaban atas kasus uji ke-$i$.
+Keluarkan banyaknya bilangan bulat pada interval $[L, R]$ yang dapat menjadi nilai $N$ sehingga Anda pasti menang.
 
 \begin{multicols}{2}
 \subsection*{Contoh Masukan}
@@ -84,8 +88,9 @@ $T$ buah baris, baris ke-$i$ berisi jawaban atas kasus uji ke-$i$.
 \end{multicols}
 
 \subsection*{Penjelasan}
-Pada contoh kasus uji pertama, hanya $N = 2$ yang membuat anda menang.
-Pada contoh kasus uji kedua, tidak ada nilai $N$ pada $\{3,4,5\}$ yang dapat membuat anda menang.
+Pada contoh kasus uji pertama, hanya $N = 2$ yang membuat Anda menang.
+
+Pada contoh kasus uji kedua, tidak ada nilai $N$ pada $\left\{3,4,5\right\}$ yang dapat membuat Anda menang.
 \pagebreak
 
 \end{document}

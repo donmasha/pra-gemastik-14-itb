@@ -79,6 +79,19 @@ protected:
         CASE(N = 10, X = {10, 9, 6, 1, 8, 6, 6, 4, 1, 5}, Y = {6, 1, 10, 6, 4, 9, 6, 8, 1, 5});
         CASE(N = 10, X = {6, 2, 2, 9, 3, 2, 10, 6, 7, 1}, Y = {2, 3, 10, 2, 2, 6, 6, 1, 7, 9});
         CASE(N = 5, X = {1, 3, 3, 5, 1}, Y = {1, 1, 3, 5, 3});
+        CASE(N = 5, X = {5, 4, 1, 2, 3}, Y = {1, 2, 3, 5, 4});
+        CASE(N = 13, X = {1, 7, 1, 4, 4, 5, 6, 13, 10, 4, 4, 5, 6}, Y = {1, 1, 4, 4, 5, 7, 6, 10, 4, 4, 5, 6, 13});
+        CASE(N = 6, X = {6, 5, 4, 3, 2, 1}, Y = {1, 6, 5, 4, 3, 2});
+        CASE(N = 8, X = {2, 3, 4, 5, 6, 5, 1, 4}, Y = {1, 2, 3, 4, 5, 6, 5, 4});
+        CASE(N = NMAX, generateInverted(X, Y, 1, N));
+        CASE(N = NMAX - 10, generateInverted(X, Y, 1, N));
+        CASE(N = 50000, generateInverted(X, Y, 1, N));
+        CASE(N = NMAX - 1, generateInverted(X, Y, 1, N));
+        CASE(N = NMAX, generate1(X, Y, 1, N));
+        CASE(N = 10, X = {7, 1, 10, 1, 10, 2, 7, 1, 4, 5}, Y = {1, 2, 7, 1, 5, 4, 7, 10, 1, 10});
+        CASE(N = 7, X = {5, 4, 3, 2, 1, 4, 3}, Y = {1, 3, 5, 4, 2, 3, 4});
+        CASE(N = 7, X = {4, 6, 7, 5, 2, 3, 1}, Y = {1, 3, 4, 2, 6, 5, 7});
+        CASE(N = 4, X = {1, 3, 2, 4}, Y = {1, 2, 4, 3});
     }
 
 private:
@@ -89,5 +102,23 @@ private:
         }
         B = A;
         rnd.shuffle(B.begin(), B.end());
+    }
+    void generateInverted(vector<int>& A, vector<int>& B, int low, int high) {
+        A.resize(high), B.resize(high);
+        for (int i = 0; i < high; i++) {
+            B[i] = i + 1, A[i] = high - i;
+        }
+    }
+    void generate1(vector<int>& A, vector<int>& B, int low, int high) {
+        A.resize(high), B.resize(high);
+        for (int i = 0; i < high; i++) {
+            B[i] = i + 1;
+        }
+        for (int i = 0; i < high / 2; i++) {
+            A[i] = high / 2 + i + 1;
+        }
+        for (int i = high / 2; i < high; i++) {
+            A[i] = i - high / 2 + 1;
+        }
     }
 };

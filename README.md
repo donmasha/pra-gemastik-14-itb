@@ -1,6 +1,6 @@
 # Pra GEMASTIK XIV ITB
 
-This is the repository of Pra GEMASTIK XIV ITB that contains solution, specification, and statements.
+This is the repository of Pra GEMASTIK XIV ITB that contains solution, specification, and statements. To get most recent update of the statement, please refer to this overleaf project [here](https://www.overleaf.com/read/jqjwrtzjcfst).
 
 ## Problem Distribution
 
